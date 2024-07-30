@@ -45,9 +45,12 @@ INSTALLED_APPS = [
     "corsheaders",
 
 
-    "app.chat_rooms",
+    "apps.chat_rooms",
+    "apps.accounts",
 
 ]
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (

@@ -40,5 +40,6 @@ urlpatterns = [
 
 
 urlpatterns += [
-    path('api/chatroom_services/', include('app.chat_rooms.frameworks_drivers.chat_rooms.urls'))
+    path('api/chat/', include('apps.chat_rooms.urls')),
+    path('api/accounts/', include('apps.accounts.urls'))
 ]

@@ -17,6 +17,6 @@ pip instal -r requirements.txt
 
 ### 작업중
 
--[ ] MSA 모듈화
--[ ] TDD
--[ ] FE 작업
+- [ ] MSA 모듈화
+- [ ] TDD
+- [ ] FE 작업
