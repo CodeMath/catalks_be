@@ -1,7 +1,7 @@
 import factory
 import uuid
 from faker import Faker
-from django.contrib.auth.models import User
+from apps.accounts.models import CustomUser
 from rest_framework_simplejwt.tokens import RefreshToken
 
 faker = Faker()
@@ -9,9 +9,9 @@ faker = Faker()
 
 class UserFactory(factory.django.DjangoModelFactory):
     class Meta:
-        model = User
+        model = CustomUser
 
-    username = factory.LazyFunction(faker.user_name)
+    # username = factory.LazyFunction(faker.user_name)
     email = factory.LazyFunction(faker.email)
     password = factory.PostGenerationMethodCall('set_password', 'password')
 

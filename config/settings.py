@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 
     "apps.chat_rooms",
     "apps.accounts",
+    "apps.participations",
 
 ]
 

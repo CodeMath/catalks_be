@@ -1,10 +1,11 @@
 from dataclasses import dataclass
 from datetime import datetime
+from typing import Union
 import uuid
 
 
 @dataclass
 class ChatParticipation:
-    room_uid: uuid.UUID
+    room_id: uuid.UUID
     user_id: uuid.UUID
-    joined_at: datetime
+    joined_at: Union[datetime, None]

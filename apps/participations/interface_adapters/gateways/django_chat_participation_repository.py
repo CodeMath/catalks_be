@@ -1,6 +1,6 @@
-from participations.domain.entities.chat_participation import ChatParticipation
-from participations.domain.repositories.chat_participation_repository import ChatParticipationRepository
-from participations.frameworks_drivers.participations.models import ChatParticipationModel
+from apps.participations.domain.entities.chat_participation import ChatParticipation
+from apps.participations.domain.repositories.chat_participation_repository import ChatParticipationRepository
+from apps.participations.models import ChatParticipationModel
 import uuid
 
 
@@ -13,16 +13,18 @@ class DjangoChatParticipationRepository(ChatParticipationRepository):
         )
         participation_model.save()
 
-    def find_by_room_and_user(self, room_id: uuid.UUID, user_id: uuid.UUID) -> ChatParticipation:
-        participation_model = ChatParticipationModel.objects.get(room_id=room_id, user_id=user_id)
-        return ChatParticipation(
-            room_id=participation_model.room_id,
-            user_id=participation_model.user_id,
-            joined_at=participation_model.joined_at
-        )
+    def find_user_by_room(self, room_id: uuid.UUID) -> list[ChatParticipation]:
+        participation_model = ChatParticipationModel.objects.filter(room_id=room_id)
+        return [
+            ChatParticipation(
+                room_id=pm.room_id,
+                user_id=pm.user_id,
+                joined_at=pm.joined_at
+            ) for pm in participation_model
+        ]
 
-    def find_all(self) -> List[ChatParticipation]:
-        participation_models = ChatParticipationModel.objects.all()
+    def find_room_by_user(self, user_id: uuid.UUID) -> list[ChatParticipation]:
+        participation_models = ChatParticipationModel.objects.filter(user_id=user_id)
         return [
             ChatParticipation(
                 room_id=pm.room_id,

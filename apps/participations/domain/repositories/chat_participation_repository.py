@@ -10,9 +10,9 @@ class ChatParticipationRepository(ABC):
         pass
 
     @abstractmethod
-    def find_by_room_and_user(self, room_id: uuid.UUID, user_id: uuid.UUID) -> ChatParticipation:
+    def find_user_by_room(self, room_id: uuid.UUID) -> list[ChatParticipation]:
         pass
 
     @abstractmethod
-    def find_all(self) -> List[ChatParticipation]:
+    def find_room_by_user(self, user_id: uuid.UUID) -> List[ChatParticipation]:
         pass

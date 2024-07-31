@@ -2,8 +2,7 @@ import pytest
 from rest_framework.test import APIClient
 from django.urls import reverse
 
-from apps.chat_rooms.tests.user_factories import UserFactory
-from apps.chat_rooms.models import ChatRoomModel
+from apps.accounts.tests.user_factories import UserFactory
 
 
 @pytest.fixture
