@@ -2,6 +2,8 @@
 
 > 슬랙처럼 그리고 텔레그램 처럼 가벼운 매신저 API 만들기
 
+[![DRF pytest & coverage](https://github.com/CodeMath/catalks_be/actions/workflows/pytest-django.yml/badge.svg)](https://github.com/CodeMath/catalks_be/actions/workflows/pytest-django.yml)
+
 ## Stack
 > DRF
 
