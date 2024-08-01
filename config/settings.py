@@ -50,7 +50,6 @@ INSTALLED_APPS = [
     "apps.participations",
     "apps.send_messages",
 
-
 ]
 
 AUTH_USER_MODEL = 'accounts.CustomUser'

@@ -8,6 +8,7 @@ class ChatRoomRepository(ABC):
 
     @abstractmethod
     def save(self, chat_room: ChatRoom) -> None:
+
         """
         방 저장
         :param chat_room: 채팅방 엔티티
