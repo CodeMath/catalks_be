@@ -32,4 +32,5 @@ urlpatterns += [
     path('api/chat/', include('apps.chat_rooms.urls')),
     path('api/accounts/', include('apps.accounts.urls')),
     path('api/joined/', include('apps.participations.urls')),
+    path('api/msg/', include('apps.send_messages.urls')),
 ]

@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "apps.chat_rooms",
     "apps.accounts",
     "apps.participations",
+    "apps.send_messages",
 
 ]
 
@@ -62,6 +63,9 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_CHARSET': 'utf-8',
 
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+
+    'PAGE_SIZE': 30,  # Default page size
 }
 
 MIDDLEWARE = [
